@@ -1,0 +1,35 @@
+Sub stockvalue()
+Dim Ticker As String
+Range("I1").Value = "Ticker"
+Range("J1").Value = "Yearly Change"
+Range("K1").Value = "Percent Change"
+Range("L1").Value = "Total Stock Value"
+
+Dim TickerCount As Double
+TickerCount = 2
+
+
+For i = 2 To 22
+If Cells(i, 1).Value <> Cells(i + 1, 1).Value Then
+Cells(TickerCount, 9).Value = Cells(i, 1).Value
+
+ClosingPrice = Cells(i, 6).Value
+OpeningPrice = Cells(i, 3).Value
+Cells(TickerCount, 10).Value = ClosingPrice - OpeningPrice
+
+
+
+
+
+
+
+
+TickerCount = TickerCount + 1
+
+
+End If
+
+
+
+
+Next i
